@@ -1,3 +1,6 @@
+// Anonymous module.
+define();
+
 // Anonymous values.
 define({});
 define(true);
