@@ -1,5 +1,9 @@
-// Anonymous object.
+// Anonymous values.
 define({});
+define(true);
+define(1234);
+define(null);
+define(undefined);
 
 // Anonymous function.
 define(function() {});
@@ -15,6 +19,13 @@ define(["require", "depA"], function(require, depA) {});
 
 // Named module.
 define("name");
+
+// Named module values.
+define("name", {});
+define("name", true);
+define("name", 1234);
+define("name", null);
+define("name", undefined);
 
 // Named function.
 define(function() {});
