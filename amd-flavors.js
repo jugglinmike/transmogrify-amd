@@ -1,4 +1,3 @@
-
 // Anonymous object.
 define({});
 
@@ -11,7 +10,7 @@ define(["depA"], function(depA) {});
 // Anonymous CJS.
 define(function(require, exports, module) {});
 
-// Mixed dependencies and CJS.
+// Anonymous mixed dependencies and CJS.
 define(["require", "depA"], function(require, depA) {});
 
 // Named module.
@@ -25,3 +24,6 @@ define("name", ["depA"], function(depA) {});
 
 // Named CJS.
 define("name", function(require, exports, module) {});
+
+// Named mixed dependencies and CJS.
+define("name", ["require", "depA"], function(require, depA) {});
