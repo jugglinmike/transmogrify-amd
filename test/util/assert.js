@@ -24,7 +24,7 @@ assert.astMatch = function(actualSrc, expectedSrc) {
   try {
     assert.deepEqual(actualAst, expectedAst);
   } catch(err) {
-    if (process.env.CLEANAMD_STRINGS) {
+    if (process.env.AMDCLEAN_STRINGS) {
       assert.equal(actualSrc, expectedSrc);
     } else {
       throw err;

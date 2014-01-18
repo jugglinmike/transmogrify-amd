@@ -1,4 +1,4 @@
-# CleanAMD
+# AMDClean
 
 ## Running tests
 
@@ -11,4 +11,4 @@ reports may contain too much noise to be useful; in these cases, you can
 configure the test runner to report string diffs of the generated code (note
 that this may also contain more information than is relevant):
 
-    $ CLEANAMD_STRINGS=1 npm test
+    $ AMDCLEAN_STRINGS=1 npm test
