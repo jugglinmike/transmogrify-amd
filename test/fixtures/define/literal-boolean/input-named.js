@@ -1,0 +1,1 @@
+define("boolean-module", true);

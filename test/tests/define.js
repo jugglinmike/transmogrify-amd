@@ -9,15 +9,26 @@ suite("define", function() {
   testDirs.filter(function(fileName) {
     return fileName !== "." || fileName !== "..";
   }).forEach(function(testDir) {
-    test(testDir, function() {
-      var input = fs.readFileSync(
-        fixturesDir + testDir + "/input.js"
-      ).toString();
+    suite(testDir, function() {
       var expected = fs.readFileSync(
         fixturesDir + testDir + "/expected.js"
       ).toString();
 
-      assert.astMatch(lib(input), expected);
+      test("anonymous module", function() {
+        var inputAnon = fs.readFileSync(
+          fixturesDir + testDir + "/input-anon.js"
+        ).toString();
+
+        assert.astMatch(lib(inputAnon), expected);
+      });
+
+      test("named module", function() {
+        var inputNamed = fs.readFileSync(
+          fixturesDir + testDir + "/input-named.js"
+        ).toString();
+
+        assert.astMatch(lib(inputNamed), expected);
+      });
     });
   });
 
