@@ -10,6 +10,13 @@ suite("astMatch", function() {
     );
   });
 
+  test("lax IIFE parenthesis placement", function() {
+    assert.astMatch(
+      "(function() {}());",
+      "(function() {})();"
+    );
+  });
+
   suite("expected failures", function() {
     var astMatchFail = function(inputSrc, expectedSrc) {
       assert.throws(function() {
