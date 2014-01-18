@@ -21,7 +21,15 @@ assert.astMatch = function(actualSrc, expectedSrc) {
     varPattern: /__AMDCLEAN\d+__/
   });
 
-  assert.deepEqual(actualAst, expectedAst);
+  try {
+    assert.deepEqual(actualAst, expectedAst);
+  } catch(err) {
+    if (process.env.CLEANAMD_STRINGS) {
+      assert.equal(actualSrc, expectedSrc);
+    } else {
+      throw err;
+    }
+  }
 };
 
 module.exports = assert;
