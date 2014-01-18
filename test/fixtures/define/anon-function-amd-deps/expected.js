@@ -1,1 +1,3 @@
-var __DEFINE__0__ = (function(depA) {})(depA);
+var __AMDCLEAN0__ = (function(depA) {
+  // content
+})(depA);

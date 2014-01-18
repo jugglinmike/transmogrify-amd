@@ -1,1 +1,1 @@
-var __DEFINE__0__ = (function() { return true; })();
+var __AMDCLEAN0__ = (function() { return true; })();

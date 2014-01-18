@@ -18,7 +18,7 @@ assert.astMatch = function(actualSrc, expectedSrc) {
 
   bindAst(actualAst, expectedAst, {
     removeAttrs: ["line", "col", "pos"],
-    varPattern: /__X\d+__/
+    varPattern: /__AMDCLEAN\d+__/
   });
 
   assert.deepEqual(actualAst, expectedAst);

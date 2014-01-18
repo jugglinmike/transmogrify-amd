@@ -23,7 +23,9 @@ suite("define", function() {
   test("tautology", function() {
     assert.astMatch(
       lib("(function(a, b) { console.log(a + b); })(1, 3);"),
-      "(function(__X13__,   __X0__)  {console.log(__X13__ + __X0__); }) (1,3);"
+      "(function(__AMDCLEAN0__,   __AMDCLEAN1__)  {" +
+        "console.log(__AMDCLEAN0__ + __AMDCLEAN1__);    " +
+        "}) (1,3);"
     );
   });
 });

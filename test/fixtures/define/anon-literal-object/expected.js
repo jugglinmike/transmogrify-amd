@@ -1,1 +1,3 @@
-var __AMDCLEAN0__ = (function() { return {}; })();
+var __AMDCLEAN0__ = (function() {
+  return {};
+})();

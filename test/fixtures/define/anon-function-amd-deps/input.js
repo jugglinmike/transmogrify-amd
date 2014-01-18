@@ -1,1 +1,3 @@
-define(['depA'], function(depA) {});
+define(['depA'], function(depA) {
+  // content
+});
