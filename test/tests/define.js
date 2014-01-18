@@ -41,32 +41,3 @@ suite("define", function() {
     );
   });
 });
-
-/*
-// Anonymous mixed dependencies and CJS.
-define(["require", "depA"], function(require, depA) {});
-
-// Named module.
-define("name");
-
-suite("Named module values.", function() {
-  define('name', {});
-  define("name", true);
-  define("name", 1234);
-  define("name", null);
-  define("name", undefined);
-});
-
-// Named function.
-define(function() {});
-
-// Named function with dependencies
-define("name", ["depA"], function(depA) {});
-
-// Named CJS.
-define("name", function(require, exports, module) {});
-
-// Named mixed dependencies and CJS.
-
-define("name", ["require", "depA"], function(require, depA) {});
-*/
