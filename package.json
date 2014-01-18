@@ -6,8 +6,9 @@
   "directories": {
     "test": "test"
   },
+  "main": "lib/transform",
   "scripts": {
-    "test": "mocha --ui tdd test/tests/*"
+    "test": "mocha --reporter spec --ui tdd test/tests/*"
   },
   "repository": {
     "type": "git",
