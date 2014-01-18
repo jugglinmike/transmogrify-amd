@@ -1,0 +1,1 @@
+define(['depA'], function(depA) {});
