@@ -1,0 +1,25 @@
+{
+  "name": "amdclean2",
+  "version": "0.0.0",
+  "description": "",
+  "main": "amd-flavors.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --ui tdd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gist.github.com:8480792.git"
+  },
+  "author": "",
+  "license": "MIT-Expat",
+  "bugs": {
+    "url": "https://gist.github.com/8480792"
+  },
+  "devDependencies": {
+    "mocha": "~1.17.0",
+    "burrito": "~0.2.12"
+  }
+}
