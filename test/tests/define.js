@@ -32,12 +32,4 @@ suite("define", function() {
     });
   });
 
-  test("tautology", function() {
-    assert.astMatch(
-      lib("(function(a, b) { console.log(a + b); })(1, 3);"),
-      "(function(__AMDCLEAN0__,   __AMDCLEAN1__)  {" +
-        "console.log(__AMDCLEAN0__ + __AMDCLEAN1__);    " +
-        "}) (1,3);"
-    );
-  });
 });
