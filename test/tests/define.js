@@ -19,7 +19,7 @@ suite("define", function() {
           fixturesDir + testDir + "/input-anon.js"
         ).toString();
 
-        assert.astMatch(lib(inputAnon), expected);
+        assert.astMatch(lib.clean(inputAnon), expected);
       });
 
       test("named module", function() {
@@ -27,7 +27,7 @@ suite("define", function() {
           fixturesDir + testDir + "/input-named.js"
         ).toString();
 
-        assert.astMatch(lib(inputNamed), expected);
+        assert.astMatch(lib.clean(inputNamed), expected);
       });
     });
   });

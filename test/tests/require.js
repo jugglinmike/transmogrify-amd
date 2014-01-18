@@ -17,7 +17,7 @@ suite.skip("require", function() {
         fixturesDir + testDir + "/expected.js"
       ).toString();
 
-      assert.astMatch(lib(input), expected);
+      assert.astMatch(lib.clean(input), expected);
     });
   });
 });
