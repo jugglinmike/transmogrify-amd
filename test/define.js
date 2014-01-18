@@ -50,30 +50,55 @@ suite("define", function() {
       });
     });
 
-function clean(val) {
-  if (Object(val) !== val) {
-    return val;
-  }
-  if (Array.isArray(val)) {
-    return val.map(clean);
-  }
-  for (attr in val) {
-    if (attr === "line" || attr === "col" || attr === "pos") {
-      delete val[attr];
-    } else {
-      val[attr] = clean(val[attr]);
+function bind(actual, expected, options) {
+  var removeAttrs = options.removeAttrs || [];
+  var varPattern = options.varPattern;
+  // Lookup table of bound variable names
+  var boundVars = {};
+
+  function _bind(actual, expected) {
+    var attr;
+    // Literal values
+    if (Object(actual) !== actual) {
+      return;
+    }
+    if (Array.isArray(actual)) {
+      actual.forEach(function(_, i) {
+        _bind(actual[i], expected[i]);
+      });
+    }
+
+    if (actual.type === "name") {
+      if (varPattern.test(expected.value)) {
+        if (!(expected.value in boundVars)) {
+          boundVars[expected.value] = actual.value;
+        }
+        expected.value = boundVars[expected.value];
+
+        console.log("Doing stuff!ss");
+      }
+    }
+
+    for (attr in actual) {
+      if (removeAttrs.indexOf(attr) > -1) {
+        delete actual[attr];
+        delete expected[attr];
+      } else {
+        _bind(actual[attr], expected[attr]);
+      }
     }
   }
-  return val;
+  _bind(actual, expected);
 }
 assert.astMatch = function(actualSrc, expectedSrc) {
-  var actualAst = clean(burrito.parse(actualSrc, false, true));
-  var expectedAst = clean(burrito.parse(expectedSrc, false, true));
+  var actualAst = burrito.parse(actualSrc, false, true);
+  var expectedAst = burrito.parse(expectedSrc, false, true);
 
-  /*bind(actualAst, expectedAst, {
-    ignoreAttrs: [],
+  bind(actualAst, expectedAst, {
+    removeAttrs: ["line", "col", "pos"],
     varPattern: /__X\d+__/
-  });*/
+  });
+  console.log(JSON.stringify(actualAst));
 
   assert.deepEqual(actualAst, expectedAst);
 };
