@@ -1,19 +1,20 @@
-var assert = require("./util/assert");
-var lib = require("..");
+var assert = require("../util/assert");
+var lib = require("../..");
 var fs = require("fs");
 
 suite("define", function() {
 
-  var testDirs = fs.readdirSync(__dirname + "/fixtures/define");
+  var fixturesDir = __dirname + "/../fixtures/define/";
+  var testDirs = fs.readdirSync(fixturesDir);
   testDirs.filter(function(fileName) {
     return fileName !== "." || fileName !== "..";
   }).forEach(function(testDir) {
     test(testDir, function() {
       var input = fs.readFileSync(
-        __dirname + "/fixtures/define/" + testDir + "/input.js"
+        fixturesDir + testDir + "/input.js"
       ).toString();
       var expected = fs.readFileSync(
-        __dirname + "/fixtures/define/" + testDir + "/expected.js"
+        fixturesDir + testDir + "/expected.js"
       ).toString();
 
       assert.astMatch(lib(input), expected);
