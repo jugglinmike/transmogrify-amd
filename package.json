@@ -20,6 +20,6 @@
   },
   "devDependencies": {
     "mocha": "~1.17.0",
-    "burrito": "~0.2.12"
+    "falafel": "~0.3.1"
   }
 }

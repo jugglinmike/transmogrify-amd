@@ -1,4 +1,4 @@
-var burrito = require("burrito");
+var falafel = require("falafel");
 var assert = require("chai").assert;
 var observableDiff = require("deep-diff").observableDiff;
 var lib = require("..");
@@ -58,27 +58,34 @@ function bind(actual, expected, options) {
 
   function _bind(actual, expected) {
     var attr;
+
     // Literal values
     if (Object(actual) !== actual) {
       return;
     }
+
+    // Arrays
     if (Array.isArray(actual)) {
       actual.forEach(function(_, i) {
         _bind(actual[i], expected[i]);
       });
+      return;
     }
 
-    if (actual.type === "name") {
-      if (varPattern.test(expected.value)) {
-        if (!(expected.value in boundVars)) {
-          boundVars[expected.value] = actual.value;
-        }
-        expected.value = boundVars[expected.value];
+    // Objects
 
-        console.log("Doing stuff!ss");
+    // Update unbound variable names in the expected AST, using the
+    // previously-bound value when available.
+    if (actual.type === "Identifier") {
+      if (varPattern.test(expected.name)) {
+        if (!(expected.name in boundVars)) {
+          boundVars[expected.name] = actual.name;
+        }
+        expected.name = boundVars[expected.name];
       }
     }
 
+    // Either remove attributes or recurse on their values
     for (attr in actual) {
       if (removeAttrs.indexOf(attr) > -1) {
         delete actual[attr];
@@ -88,31 +95,46 @@ function bind(actual, expected, options) {
       }
     }
   }
+
+  // Start recursing on the ASTs from the top level.
   _bind(actual, expected);
 }
+
 assert.astMatch = function(actualSrc, expectedSrc) {
-  var actualAst = burrito.parse(actualSrc, false, true);
-  var expectedAst = burrito.parse(expectedSrc, false, true);
+  var actualAst;
+  var expectedAst;
+
+  // falafel preforms a pre-traversal walk, so the final node will be the
+  // complete AST.
+  falafel(actualSrc, false, function(node) {
+    actualAst = node;
+  });
+  falafel(expectedSrc, false, function(node) {
+    expectedAst = node;
+  });
 
   bind(actualAst, expectedAst, {
     removeAttrs: ["line", "col", "pos"],
     varPattern: /__X\d+__/
   });
-  console.log(JSON.stringify(actualAst));
 
   assert.deepEqual(actualAst, expectedAst);
 };
 
     suite("functions", function() {
-      test.only("without dependencies", function() {
+
+      test.only("tautology", function() {
         assert.astMatch(
           lib("(function(a, b) { console.log(a + b); })(1, 3);"),
-          "(function(a,   __X0__)  {console.log(a + __X0__); }) (1,   3);"
+          "(function(__X13__,   __X0__)  {console.log(__X13__ + __X0__); }) (1,   3);"
         );
-        //assert.equal(
-        //  lib("define(function() {});"),
-        //  "var __DEFINE__0__ = (function() {})();"
-        //);
+      });
+
+      test("without dependencies", function() {
+        assert.equal(
+          lib("define(function() {});"),
+          "var __DEFINE__0__ = (function() {})();"
+        );
       });
 
       test("with AMD dependencies", function() {
