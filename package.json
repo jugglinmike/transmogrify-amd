@@ -6,7 +6,7 @@
   "directories": {
     "test": "test"
   },
-  "main": "lib/transform",
+  "main": "lib",
   "scripts": {
     "test": "mocha --reporter spec --ui tdd test/tests/*"
   },
