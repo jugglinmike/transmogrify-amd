@@ -6,6 +6,11 @@ suite("require", function() {
 
   var fixturesDir = __dirname + "/../fixtures/require/";
   var testDirs = fs.readdirSync(fixturesDir);
+
+  // Register the given identifer.
+  lib.defaultContext.requestIdentifier("moduleA");
+  lib.defaultContext.requestIdentifier("module-a");
+
   testDirs.filter(function(fileName) {
     return fileName !== "." || fileName !== "..";
   }).forEach(function(testDir) {
