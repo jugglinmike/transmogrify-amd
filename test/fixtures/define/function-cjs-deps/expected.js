@@ -1,9 +1,9 @@
-var __AMDCLEAN0__ = (function() {
-  var __AMDCLEAN1__ = { exports: {} };
+var __UNBOUND0__ = (function() {
+  var __UNBOUND1__ = { exports: {} };
 
   (function(require, exports, module) {
     var content;
   })(null, module.exports, module);
 
-  return __AMDCLEAN1__.exports;
+  return __UNBOUND1__.exports;
 })();

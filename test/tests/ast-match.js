@@ -4,8 +4,8 @@ suite("astMatch", function() {
   test("variable binding", function() {
     assert.astMatch(
       "(function(a, b) { console.log(a + b); })(1, 3);",
-      "(function(__AMDCLEAN0__,   __AMDCLEAN1__)  {" +
-        "console.log(__AMDCLEAN0__ + __AMDCLEAN1__);    " +
+      "(function(__UNBOUND0__,   __UNBOUND1__)  {" +
+        "console.log(__UNBOUND0__ + __UNBOUND1__);    " +
       "}) (1,3);"
     );
   });
@@ -31,7 +31,7 @@ suite("astMatch", function() {
     test("double binding", function() {
       astMatchFail(
         "(function(a, b) { console.log(a); });",
-        "(function(__AMDCLEAN0__, __AMDCLEAN1__) { console.log(__AMDCLEAN1__); });"
+        "(function(__UNBOUND0__, __UNBOUND1__) { console.log(__UNBOUND1__); });"
       );
     });
   });

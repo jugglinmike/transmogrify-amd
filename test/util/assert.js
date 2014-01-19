@@ -7,7 +7,7 @@ assert.astMatch = function(actualSrc, expectedSrc) {
   var actualAst = parse(actualSrc).body;
   var expectedAst = parse(expectedSrc).body;
 
-  bindAst(actualAst, expectedAst, /__AMDCLEAN\d+__/);
+  bindAst(actualAst, expectedAst, /__UNBOUND\d+__/);
 
   try {
     assert.deepEqual(actualAst, expectedAst, "This is a message");

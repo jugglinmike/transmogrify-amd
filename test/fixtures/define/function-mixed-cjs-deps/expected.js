@@ -1,8 +1,8 @@
-var __AMDCLEAN0__ = (function() {
-  var __AMDCLEAN1__ = { exports: {} };
-  var __AMDCLEAN2__ = (function(depA, exportsChangedForNoReason) {
+var __UNBOUND0__ = (function() {
+  var __UNBOUND1__ = { exports: {} };
+  var __UNBOUND2__ = (function(depA, exportsChangedForNoReason) {
     var content;
-  })(depA, __AMDCLEAN1__.exports);
+  })(depA, __UNBOUND1__.exports);
 
-  return __AMDCLEAN2__ || __AMDCLEAN1__.exports;
+  return __UNBOUND2__ || __UNBOUND1__.exports;
 })();

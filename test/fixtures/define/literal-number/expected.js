@@ -1,3 +1,3 @@
-var __AMDCLEAN0__ = (function() {
+var __UNBOUND0__ = (function() {
   return 1234;
 })();

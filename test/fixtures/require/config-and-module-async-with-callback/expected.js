@@ -1,3 +1,3 @@
 (function(moduleA) {
   var content;
-})(__AMDCLEAN0__)
+})(__UNBOUND0__)
