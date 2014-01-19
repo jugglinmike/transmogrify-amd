@@ -24,5 +24,8 @@
     "mocha": "~1.17.0",
     "chai": "~1.8.1",
     "esprima": "~1.0.4"
+  },
+  "dependencies": {
+    "falafel": "~0.3.1"
   }
 }
