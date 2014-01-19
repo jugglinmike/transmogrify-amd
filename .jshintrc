@@ -1,5 +1,6 @@
 {
   "quotmark": "double",
   "esnext": true,
-  "trailing": true
+  "trailing": true,
+  "unused": true
 }
