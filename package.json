@@ -2,11 +2,10 @@
   "name": "amdclean2",
   "version": "0.0.0",
   "description": "",
-  "main": "amd-flavors.js",
+  "main": "lib",
   "directories": {
     "test": "test"
   },
-  "main": "lib",
   "scripts": {
     "test": "mocha --reporter spec --ui tdd test/tests/*"
   },
