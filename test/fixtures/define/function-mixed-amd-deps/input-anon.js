@@ -1,3 +1,3 @@
 define(["require", "depA"], function(require, depA) {
-  // content
+  var content;
 });

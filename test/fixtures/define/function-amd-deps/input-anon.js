@@ -1,3 +1,3 @@
 define(['depA'], function(depA) {
-  // content
+  var content;
 });

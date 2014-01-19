@@ -1,3 +1,3 @@
 var __AMDCLEAN0__ = (function(require, depA) {
- // content
+ var content;
 })(null, depA);
