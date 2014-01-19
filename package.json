@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "mocha --reporter spec --ui tdd test/tests/* && npm run jshint",
-    "jshint": "jshint test/tests/*.js test/util/*.js"
+    "jshint": "jshint lib/ test/tests/*.js test/util/*.js"
   },
   "repository": {
     "type": "git",
