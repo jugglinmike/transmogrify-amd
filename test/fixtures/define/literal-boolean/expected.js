@@ -1,1 +1,1 @@
-var __UNBOUND0__ = (function() { return true; })();
+var __UNBOUND0__ = true;

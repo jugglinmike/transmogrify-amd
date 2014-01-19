@@ -1,3 +1,1 @@
-var __UNBOUND0__ = (function() {
-  return 1234;
-})();
+var __UNBOUND0__ = 1234;
