@@ -1,9 +1,7 @@
 // Given a "template" expected AST that defines abstract identifier names
 // described by `options.varPattern`, "bind" those identifiers to their
 // concrete names in the "actual" AST.
-module.exports = function(actual, expected, options) {
-  var removeAttrs = options.removeAttrs || [];
-  var varPattern = options.varPattern;
+module.exports = function(actual, expected, varPattern) {
   // Lookup table of bound variable names
   var boundVars = {};
 
@@ -38,10 +36,7 @@ module.exports = function(actual, expected, options) {
 
     // Either remove attributes or recurse on their values
     for (attr in actual) {
-      if (removeAttrs.indexOf(attr) > -1) {
-        delete actual[attr];
-        delete expected[attr];
-      } else if (expected && attr in expected) {
+      if (expected && attr in expected) {
         _bind(actual[attr], expected[attr]);
       }
     }

@@ -7,10 +7,7 @@ assert.astMatch = function(actualSrc, expectedSrc) {
   var actualAst = parse(actualSrc);
   var expectedAst = parse(expectedSrc);
 
-  bindAst(actualAst, expectedAst, {
-    removeAttrs: ["line", "col", "pos"],
-    varPattern: /__AMDCLEAN\d+__/
-  });
+  bindAst(actualAst, expectedAst, /__AMDCLEAN\d+__/);
 
   try {
     assert.deepEqual(actualAst, expectedAst);
