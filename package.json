@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "mocha --reporter spec --ui tdd test/tests/* && npm run jshint",
-    "jshint": "jshint lib/ test/tests/*.js test/util/*.js"
+    "jshint": "jshint lib/ test/tests/*.js test/util/*.js",
+    "jsdoc": "jsdoc -r -d docs/ lib/"
   },
   "repository": {
     "type": "git",
@@ -23,9 +24,11 @@
     "jshint": "~2.4.1",
     "mocha": "~1.17.0",
     "chai": "~1.8.1",
-    "esprima": "~1.0.4"
+    "esprima": "~1.0.4",
+    "jsdoc": "~3.3.0-alpha3"
   },
   "dependencies": {
-    "falafel": "~0.3.1"
+    "falafel": "~0.3.1",
+    "jsdoc": "~3.3.0-alpha3"
   }
 }
