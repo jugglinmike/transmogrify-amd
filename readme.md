@@ -1,5 +1,7 @@
 # AMDClean
 
+[![Build Status](https://travis-ci.org/jugglinmike/amdclean.png)](https://travis-ci.org/jugglinmike/amdclean)
+
 ## Tests
 
 Unit tests can be invoked from the command line via:
