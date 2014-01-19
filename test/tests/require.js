@@ -2,7 +2,7 @@ var assert = require("../util/assert");
 var lib = require("../..");
 var fs = require("fs");
 
-suite.skip("require", function() {
+suite("require", function() {
 
   var fixturesDir = __dirname + "/../fixtures/require/";
   var testDirs = fs.readdirSync(fixturesDir);

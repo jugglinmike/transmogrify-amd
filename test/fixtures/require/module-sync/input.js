@@ -1,1 +1,1 @@
-require("moduleA");
+require("moduleA")

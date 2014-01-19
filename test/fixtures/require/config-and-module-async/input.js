@@ -1,3 +1,3 @@
 require({
   baseUrl: ""
-}, ["moduleA"]);
+}, ["moduleA"])
