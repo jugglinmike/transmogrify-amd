@@ -8,8 +8,8 @@ suite("require", function() {
   var testDirs = fs.readdirSync(fixturesDir);
 
   // Register the given identifer.
-  lib.defaultContext.requestIdentifier("moduleA");
-  lib.defaultContext.requestIdentifier("module-a");
+  lib.defaultContext.register("moduleA");
+  lib.defaultContext.register("module-a");
 
   testDirs.filter(function(fileName) {
     return fileName !== "." || fileName !== "..";
