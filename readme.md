@@ -11,9 +11,8 @@ Unit tests can be invoked from the command line via:
 
     $ npm test
 
-Tests assert expectations over JavaScript ASTs. The expected ASTs include
-"fuzzy" identifier names of the pattern `__UNBOUND{number}__` in order to avoid
-hard-coding procedurally-generated identifiers (which are an internal concern).
+The tests assert expectations over JavaScript ASTs. See [the "compareAst"
+project](https://github.com/jugglinmike/compare-ast) for details.
 
 ## Documentation
 
