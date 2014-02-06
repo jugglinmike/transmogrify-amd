@@ -1,9 +1,47 @@
 # Transmogrify AMD
 
+> Re-write AMD files to synchronously define modules on a global namespace
+
 [![Build Status](https://travis-ci.org/jugglinmike/transmogrify-amd.png)](https://travis-ci.org/jugglinmike/transmogrify-amd)
 
 Thanks to Greg Franko (@gfranko) for inspiring this work with [the "amdclean"
 project](https://github.com/gfranko/amdclean)!
+
+## Install
+
+Install using [NPM](http://npmjs.org/):
+
+``` bash 
+npm install transmogrify-amd
+```
+
+## Example
+
+This is a sample AMD module:
+
+``` javascript
+define("moduleA", [], function() {
+
+});
+```
+
+Then you would use the following code to convert:
+
+``` javascript
+// Get the source and convert to a String.
+var source = fs.readFileSync("./the/above/file").toString();
+
+// Pass into the `clean` function, you will receive cleaned source of the file.
+require("transmogrify-amd").clean(source);
+```
+
+By default, the transmogulation puts all modules into the global scope.
+
+``` javascript
+window.moduleA = (function() {
+
+})();
+```
 
 ## Tests
 
