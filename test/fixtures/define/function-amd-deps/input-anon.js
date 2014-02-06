@@ -1,3 +1,3 @@
-define(['depA'], function(depA) {
+define(['module-a'], function(depA) {
   var content;
 });

@@ -1,3 +1,3 @@
-define(["require", "depA"], function(require, depA) {
+define(["require", "module-a"], function(require, depA) {
   var content;
 });

@@ -1,3 +1,3 @@
-define("function-amd-deps-module", ['depA'], function(depA) {
+define("function-amd-deps-module", ['module-a'], function(depA) {
   var content;
 });

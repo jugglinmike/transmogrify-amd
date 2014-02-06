@@ -1,3 +1,3 @@
 (function(moduleA) {
   var content;
-})(__UNBOUND0__)
+})(window["module-a"])

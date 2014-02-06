@@ -1,1 +1,1 @@
-var __UNBOUND0__ = (function() {})();
+__UNBOUND0__["__STRING0__"] = (function() {})();

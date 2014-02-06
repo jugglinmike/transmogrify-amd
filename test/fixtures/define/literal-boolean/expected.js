@@ -1,1 +1,1 @@
-var __UNBOUND0__ = true;
+__UNBOUND0__["__STRING0__"] = true;

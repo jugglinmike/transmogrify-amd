@@ -1,1 +1,1 @@
-var __UNBOUND0__ = null;
+__UNBOUND0__["__STRING0__"] = null;

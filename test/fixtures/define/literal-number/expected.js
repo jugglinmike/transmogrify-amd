@@ -1,1 +1,1 @@
-var __UNBOUND0__ = 1234;
+__UNBOUND0__["__STRING1__"] = 1234;

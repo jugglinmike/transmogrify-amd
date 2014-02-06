@@ -1,4 +1,4 @@
-var __UNBOUND0__ = (function() {
+__UNBOUND0__["__STRING1__"] = (function() {
   var __UNBOUND1__ = { exports: {} };
 
   (function(require, exports, module) {

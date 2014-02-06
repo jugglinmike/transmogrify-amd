@@ -1,3 +1,3 @@
-define(["depA", "exports"], function(depA, exportsChangedForNoReason) {
+define(["module-a", "exports"], function(depA, exportsChangedForNoReason) {
   var content;
 });

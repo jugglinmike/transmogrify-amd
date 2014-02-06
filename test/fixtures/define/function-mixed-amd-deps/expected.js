@@ -1,3 +1,3 @@
-var __UNBOUND0__ = (function(require, depA) {
+__UNBOUND0__["__STRING1__"] = (function(require, depA) {
  var content;
-})(null, depA);
+})(null, __UNBOUND0__["__STRING2__"]);

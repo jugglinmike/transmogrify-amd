@@ -6,6 +6,11 @@ suite("define", function() {
 
   var fixturesDir = __dirname + "/../fixtures/define/";
   var testDirs = fs.readdirSync(fixturesDir);
+
+  // Register the given identifer.
+  lib.defaultContext.register("moduleA");
+  lib.defaultContext.register("module-a");
+
   testDirs.filter(function(fileName) {
     return fileName !== "." || fileName !== "..";
   }).forEach(function(testDir) {

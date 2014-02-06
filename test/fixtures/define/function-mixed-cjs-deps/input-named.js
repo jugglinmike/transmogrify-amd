@@ -1,5 +1,5 @@
 define("function-mixed-cjs-deps-module",
-  ["depA", "exports"],
+  ["module-a", "exports"],
   function(depA, exportsChangedForNoReason) {
     var content;
   }

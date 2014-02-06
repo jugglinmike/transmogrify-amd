@@ -1,3 +1,3 @@
-var __UNBOUND0__ = (function(depA) {
+__UNBOUND1__["__STRING1__"] = (function(depA) {
   var content;
-})(depA);
+})(__UNBOUND1__["module-a"]);
