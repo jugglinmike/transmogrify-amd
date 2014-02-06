@@ -1,6 +1,9 @@
-# AMDClean
+# Transmogrify AMD
 
-[![Build Status](https://travis-ci.org/jugglinmike/amdclean.png)](https://travis-ci.org/jugglinmike/amdclean)
+[![Build Status](https://travis-ci.org/jugglinmike/transmogrify-amd.png)](https://travis-ci.org/jugglinmike/transmogrify-amd)
+
+Thanks to Greg Franko (@gfranko) for inspiring this work with [the "amdclean"
+project](https://github.com/gfranko/amdclean)!
 
 ## Tests
 
