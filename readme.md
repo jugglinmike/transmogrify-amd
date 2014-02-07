@@ -35,7 +35,7 @@ var source = fs.readFileSync("./the/above/file").toString();
 require("transmogrify-amd").clean(source);
 ```
 
-By default, the transmogulation puts all modules into the global scope.
+By default, the transmogrification defines all modules on the global scope.
 
 ``` javascript
 window.moduleA = (function() {
