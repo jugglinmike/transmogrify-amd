@@ -1,15 +1,17 @@
 var assert = require("../util/assert");
-var lib = require("../..");
+var Context = require("../..").Context;
+var clean = require("../..").clean;
 var fs = require("fs");
 
 suite("define", function() {
 
   var fixturesDir = __dirname + "/../fixtures/define/";
   var testDirs = fs.readdirSync(fixturesDir);
+  var context = new Context();
 
   // Register the given identifer.
-  lib.defaultContext.register("moduleA");
-  lib.defaultContext.register("module-a");
+  context.register("moduleA");
+  context.register("module-a");
 
   testDirs.filter(function(fileName) {
     return fileName !== "." || fileName !== "..";
@@ -24,7 +26,7 @@ suite("define", function() {
           fixturesDir + testDir + "/input-anon.js"
         ).toString();
 
-        assert.astMatch(lib.clean(inputAnon), expected);
+        assert.astMatch(clean(inputAnon, context), expected);
       });
 
       test("named module", function() {
@@ -32,7 +34,7 @@ suite("define", function() {
           fixturesDir + testDir + "/input-named.js"
         ).toString();
 
-        assert.astMatch(lib.clean(inputNamed), expected);
+        assert.astMatch(clean(inputNamed, context), expected);
       });
     });
   });
