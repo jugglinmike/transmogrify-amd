@@ -47,7 +47,9 @@ window.moduleA = (function() {
 
 Unit tests can be invoked from the command line via:
 
-    $ npm test
+``` bash
+npm test
+```
 
 The tests assert expectations over JavaScript ASTs. See [the "compareAst"
 project](https://github.com/jugglinmike/compare-ast) for details.
@@ -57,7 +59,9 @@ project](https://github.com/jugglinmike/compare-ast) for details.
 At the moment there are no pubished resources for API documentation, but fear
 not, you can generate the API documentation by running:
 
-    $ npm run jsdoc
+``` bash
+npm run jsdoc
+```
 
 Once that completes you can open **docs/index.html** in your browser.
 
